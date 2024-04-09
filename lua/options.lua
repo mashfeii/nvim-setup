@@ -1,13 +1,12 @@
 local cmd = vim.cmd -- execute Vim commands
-local g = vim.g
 local exec = vim.api.nvim_exec -- execute Vimscript
 local opt = vim.opt -- global/buffer/windows-scoped options
 
 -----------------------------------------------------------
 -- Global
 -----------------------------------------------------------
-opt.colorcolumn = "100" -- Разделитель на 80 символов
-opt.textwidth = 100
+opt.colorcolumn = "110" -- Разделитель на 80 символов
+opt.textwidth = 110
 opt.cursorline = true -- Подсветка строки с курсором
 opt.spelllang = { "en_us", "ru" } -- Словари рус eng
 opt.number = true -- Включаем нумерацию строк
@@ -26,11 +25,6 @@ opt.foldenable = true
 opt.foldmethod = "indent"
 opt.termguicolors = true
 opt.langmap =
-	-- "ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz"
-	-- opt.keymap = "russian-jcukenwin"
-	-----------------------------------------------------------
-	-- Global values
-	-----------------------------------------------------------
 	-----------------------------------------------------------
 	-- Tabs and indets
 	-----------------------------------------------------------
@@ -38,10 +32,10 @@ opt.langmap =
 filetype plugin on
 syntax on
 ]])
--- cmd("colorscheme tokyonight")
+cmd([[colorscheme tokyonight]])
 opt.expandtab = true -- use spaces instead of tabs
-opt.shiftwidth = 2 -- shift 4 spaces when tab
-opt.tabstop = 2 -- 1 tab == 4 spaces
+opt.shiftwidth = 3 -- shift 4 spaces when tab
+opt.tabstop = 3 -- 1 tab == 4 spaces
 opt.smartindent = true -- autoindent new lines
 opt.autoindent = true
 opt.wildignore = "*.out, *.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx"
@@ -49,8 +43,6 @@ opt.showcmd = true
 opt.showmode = true
 opt.wildmenu = true
 opt.wildmode = "list:longest"
-
-vim.g.mapleader = ";"
 
 -----------------------------------------------------------
 -- Run CPP compiler

@@ -30,14 +30,14 @@ return {
   "kevinhwang91/nvim-ufo",
   dependencies = { "kevinhwang91/promise-async" },
   config = function()
-    require("ufo").setup({
-      fold_virt_text_handler = handler,
-      provider_selector = function(bufnr, filetype, buftype)
-        return { "treesitter", "indent" }
-      end,
-    })
-    -- Remapping base folding for UFO
-    vim.keymap.set("n", "zR", require("ufo").openAllFolds)
-    vim.keymap.set("n", "zM", require("ufo").closeAllFolds)
+    require('ufo').setup({
+    fold_virt_text_handler = handler,
+    provider_selector = function (bufnr, filetype, buftype)
+      return { "treesitter", "indent" }
+    end
+})
+      -- Remapping base folding for UFO
+      vim.keymap.set("n", "zR", require("ufo").openAllFolds)
+      vim.keymap.set("n", "zM", require("ufo").closeAllFolds)
   end,
 }
