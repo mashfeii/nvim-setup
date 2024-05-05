@@ -1,12 +1,13 @@
 local cmd = vim.cmd -- execute Vim commands
+local g = vim.g
 local exec = vim.api.nvim_exec -- execute Vimscript
 local opt = vim.opt -- global/buffer/windows-scoped options
 
 -----------------------------------------------------------
 -- Global
 -----------------------------------------------------------
-opt.colorcolumn = "110" -- Разделитель на 80 символов
-opt.textwidth = 110
+opt.colorcolumn = "80" -- Разделитель на 80 символов
+opt.textwidth = 80
 opt.cursorline = true -- Подсветка строки с курсором
 opt.spelllang = { "en_us", "ru" } -- Словари рус eng
 opt.number = true -- Включаем нумерацию строк
@@ -24,18 +25,17 @@ opt.foldlevelstart = 99
 opt.foldenable = true
 opt.foldmethod = "indent"
 opt.termguicolors = true
-opt.langmap =
-	-----------------------------------------------------------
-	-- Tabs and indets
-	-----------------------------------------------------------
-	cmd([[
+-----------------------------------------------------------
+-- Tabs and indets
+-----------------------------------------------------------
+cmd([[
 filetype plugin on
 syntax on
 ]])
-cmd([[colorscheme tokyonight]])
+cmd([[colorscheme nord]])
 opt.expandtab = true -- use spaces instead of tabs
-opt.shiftwidth = 3 -- shift 4 spaces when tab
-opt.tabstop = 3 -- 1 tab == 4 spaces
+opt.shiftwidth = 2 -- shift 4 spaces when tab
+opt.tabstop = 2 -- 1 tab == 4 spaces
 opt.smartindent = true -- autoindent new lines
 opt.autoindent = true
 opt.wildignore = "*.out, *.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx"
@@ -71,7 +71,31 @@ local create_cmd = vim.api.nvim_create_user_command
 create_cmd("ToggleBackground", function()
 	if vim.o.background == "dark" then
 		vim.cmd("set bg=light")
+		cmd([[colorscheme tokyonight]])
+		require("lualine").setup({
+			options = {
+				theme = "tokyonight",
+			},
+		})
 	else
 		vim.cmd("set bg=dark")
+		cmd([[colorscheme nord]])
+		require("lualine").setup({
+			options = {
+				theme = "nord",
+			},
+		})
 	end
 end, {})
+vim.api.nvim_create_autocmd("ModeChanged", {
+	pattern = "*",
+	callback = function()
+		if
+			((vim.v.event.old_mode == "s" and vim.v.event.new_mode == "n") or vim.v.event.old_mode == "i")
+			and require("luasnip").session.current_nodes[vim.api.nvim_get_current_buf()]
+			and not require("luasnip").session.jump_active
+		then
+			require("luasnip").unlink_current()
+		end
+	end,
+})

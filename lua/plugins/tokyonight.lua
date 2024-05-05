@@ -3,9 +3,8 @@ return {
 	lazy = false,
 	priority = 1000,
 	opts = {
-		style = "moon",
+		style = "storm",
 		styles = {
-			-- default comment
 			comments = { italic = false, bold = false },
 			keywords = {
 				italic = false,

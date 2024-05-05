@@ -4,10 +4,8 @@ return {
 	init = function()
 		vim.g.lualine_laststatus = vim.o.laststatus
 		if vim.fn.argc(-1) > 0 then
-			-- set an empty statusline till lualine loads
 			vim.o.statusline = " "
 		else
-			-- hide the statusline on the starter page
 			vim.o.laststatus = 0
 		end
 	end,
@@ -32,18 +30,11 @@ return {
 			error_diagnostic_selected = { bold = true },
 		},
 		options = {
-			close_command = "bdelete! %d",
-			right_mouse_command = nil,
-			left_mouse_command = "buffer %d",
-			middle_mouse_command = nil,
-			indicator = {
-				icon = "▎", -- this should be omitted if indicator style is not 'icon'
-				style = "icon",
-			},
+			separator_style = "thin",
 			offsets = {
 				{
 					filetype = "neo-tree",
-          text = "NeoTree",
+					text = "NeoTree",
 					highlight = "Directory",
 					text_align = "center",
 				},
@@ -52,7 +43,6 @@ return {
 	},
 	config = function(_, opts)
 		require("bufferline").setup(opts)
-		-- Fix bufferline when restoring a session
 		vim.api.nvim_create_autocmd("BufAdd", {
 			callback = function()
 				vim.schedule(function()
