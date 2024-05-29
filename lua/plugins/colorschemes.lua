@@ -1,52 +1,34 @@
 return {
   {
     "catppuccin/nvim",
-    lazy = true,
+    lazy = false,
+    priority = 1000,
     name = "catppuccin",
-    opts = {
-      integrations = {
-        aerial = true,
-        alpha = true,
-        cmp = true,
-        dashboard = true,
-        flash = true,
-        gitsigns = true,
-        headlines = true,
-        illuminate = true,
-        indent_blankline = { enabled = true },
-        leap = true,
-        lsp_trouble = true,
-        mason = true,
-        markdown = true,
-        mini = true,
-        native_lsp = {
-          enabled = true,
-          underlines = {
-            errors = { "undercurl" },
-            hints = { "undercurl" },
-            warnings = { "undercurl" },
-            information = { "undercurl" },
-          },
+    config = function()
+      require("catppuccin").setup({
+        flavour = "frappe",
+        transparent_background = true,
+        styles = {            -- Handles the styles of general hi groups (see `:h highlight-args`):
+          comments = { "italic" }, -- Change the style of comments
+          conditionals = { "italic" },
+          loops = {},
+          functions = { "italic" },
+          keywords = { "bold" },
+          operators = {},
         },
-        navic = { enabled = true, custom_bg = "lualine" },
-        neotest = true,
-        neotree = true,
-        noice = true,
-        notify = true,
-        semantic_tokens = true,
-        telescope = true,
-        treesitter = true,
-        treesitter_context = true,
-        which_key = true,
-      },
-    },
+      })
+      -- vim.cmd([[colorscheme catppuccin]])
+    end,
   },
   {
     "phha/zenburn.nvim",
-    lazy = true,
+    lazy = false,
+    priority = 1000,
   },
   {
     "gbprod/nord.nvim",
+    lazy = false,
+    priority = 1000,
     config = function()
       require("nord").setup({
         search = { theme = "vscode" },
@@ -67,6 +49,7 @@ return {
     config = function()
       require("tokyonight").setup({
         style = "storm",
+        transparent = true,
         styles = {
           comments = { italic = true, bold = false },
           keywords = {
@@ -77,7 +60,7 @@ return {
         },
         lualine_bold = true,
       })
-      vim.cmd([[colorscheme tokyonight]])
+      vim.cmd[[colorscheme tokyonight]]
     end,
   },
 }

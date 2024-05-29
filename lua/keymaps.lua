@@ -42,6 +42,7 @@ map("n", "<F4>", [[<cmd>lua require('telescope.builtin').grep_string()<cr>]], de
 map("n", "<F16>", [[<cmd>lua require('telescope.builtin').live_grep()<cr>]], default_opts)
 -- <F5>,<F9> Compile and run C/CPP program
 map("n", "<F5>", ":call CompileAndRun()<CR>", default_opts)
+map("n", "<A-n>", ":CompileCPP<cr>", default_opts)
 map("n", "<F9>", ":w<CR>:!clear<CR>:call CompileAndRun()<CR>", default_opts)
 
 map("n", "<leader>cg", ":CMakeGenerate<cr>", default_opts)

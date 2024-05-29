@@ -7,7 +7,7 @@ return {
         component_separators = "",
         section_separators = { left = "", right = "" },
         -- theme = "nord",
-        theme = "tokyonight",
+        theme = "catppuccin",
       },
       sections = {
         lualine_a = { { "mode", right_padding = 2 } },
