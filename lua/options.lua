@@ -1,12 +1,33 @@
 local cmd = vim.cmd            -- execute Vim commands
-local g = vim.g
+-- local g = vim.g
 local exec = vim.api.nvim_exec -- execute Vimscript
 local opt = vim.opt            -- global/buffer/windows-scoped options
 -----------------------------------------------------------
+-- Icons 
+-----------------------------------------------------------
+vim.opt.list = true
+vim.opt.listchars = {
+    space = " ",
+    -- eol = "",
+    -- tab = "▎ ",
+    tab = "|_>",
+    trail = ".",
+    extends = "❯",
+    precedes = "❮",
+    nbsp = "",
+}
+vim.opt.fillchars = {
+    fold = " ",
+    foldsep = " ",
+    foldopen = "",
+    foldclose = "",
+    diff = "╱",
+}
+-----------------------------------------------------------
 -- Global
 -----------------------------------------------------------
-opt.colorcolumn = "80"            -- Разделитель на 80 символов
-opt.textwidth = 80
+opt.colorcolumn = "100"            -- Разделитель на 80 символов
+-- opt.textwidth = 80
 opt.cursorline = true             -- Подсветка строки с курсором
 opt.spelllang = { "en_us", "ru" } -- Словари рус eng
 opt.number = true                 -- Включаем нумерацию строк
@@ -30,11 +51,18 @@ cmd([[
 filetype plugin on
 syntax on
 ]])
-opt.expandtab = true   -- use spaces instead of tabs
-opt.shiftwidth = 2     -- shift 2 spaces when tab
-opt.tabstop = 2        -- 1 tab == 2 spaces
-opt.smartindent = true -- autoindent new lines
-opt.autoindent = true
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.softtabstop = 2
+vim.opt.expandtab = true
+vim.opt.title = true
+vim.opt.autoindent = true
+vim.opt.smartindent =  true
+vim.opt.breakindent = true
+vim.opt.fileencodings = "utf-8"
+vim.scriptencoding = "utf-8"
+vim.opt.encoding = "utf-8"
+vim.opt.smarttab = true
 opt.wildignore = "*.out, *.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx"
 opt.showcmd = true
 opt.showmode = true
