@@ -27,7 +27,7 @@ vim.opt.fillchars = {
 -- Global
 -----------------------------------------------------------
 opt.colorcolumn = "100"            -- Разделитель на 80 символов
--- opt.textwidth = 80
+opt.textwidth = 100
 opt.cursorline = true             -- Подсветка строки с курсором
 opt.spelllang = { "en_us", "ru" } -- Словари рус eng
 opt.number = true                 -- Включаем нумерацию строк
