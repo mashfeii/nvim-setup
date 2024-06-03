@@ -1,0 +1,40 @@
+{
+  "Меню-бургер": {
+    "prefix": "menu",
+    "body": [
+      "<div class=\"header__menu menu\">",
+      "   <button type=\"button\" class=\"menu__icon icon-menu\"><span></span></button>",
+      "   <nav class=\"menu__body\">",
+      "      <ul class=\"menu__list\">",
+      "         <li class=\"menu__item\"><a href=\"\" class=\"menu__link\"></a></li>",
+      "      </ul>",
+      "   </nav>",
+      "</div>"
+    ]
+  },
+  "Спойлер": {
+    "prefix": "spoller",
+    "body": [
+      "<div data-spollers class=\"spollers\">",
+      "   <div class=\"spollers__item\">",
+      "      <button type=\"button\" data-spoller class=\"spollers__title\">$1Заголовок спойлера</button>",
+      "      <div class=\"spollers__body\">$2Контент спойлера</div>",
+      "   </div>",
+      "</div>"
+    ]
+  },
+  "Модальное окно": {
+    "prefix": "popup",
+    "body": [
+      "<div id=\"$1popup\" aria-hidden=\"true\" class=\"popup\">",
+      "   <div class=\"popup__body\">",
+      "      <div class=\"popup__content\">",
+      "         <a href=\"#\" class=\"popup__close close-popup\"><img src=\"img/icons/cross.svg\" alt=\"Закрыть модальное окно\"></a>",
+      "         <div class=\"popup__text\">$2",
+      "         </div>",
+      "      </div>",
+      "   </div>",
+      "</div>"
+    ]
+  }
+}
