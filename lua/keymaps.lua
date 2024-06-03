@@ -7,12 +7,12 @@ map("v", "S-Y", '"+y', {})
 map("i", "jj", "<Esc>", { noremap = true })
 -- Автоформат + сохранение по CTRL-s , как в нормальном, так и в insert режиме
 keymap.set("i", "<C-s>", function()
-  vim.lsp.buf.format()
-  vim.api.nvim_command("write")
+	vim.lsp.buf.format()
+	vim.api.nvim_command("write")
 end, default_opts)
 keymap.set("n", "<C-s>", function()
-  vim.lsp.buf.format()
-  vim.api.nvim_command("write")
+	vim.lsp.buf.format()
+	vim.api.nvim_command("write")
 end, default_opts)
 keymap.set("n", "<leader>f", vim.lsp.buf.format, default_opts)
 keymap.set("n", "<leader>em", vim.diagnostic.open_float, default_opts)
@@ -51,13 +51,13 @@ map("n", "<leader>cr", ":CMakeRun<cr>", default_opts)
 map("n", "<leader>term", ":ToggleTerm direction=vertical size=80<cr>", default_opts)
 
 function _G.set_terminal_keymaps()
-  local opts = { buffer = 0 }
-  keymap.set("t", "<esc>", [[<C-\><C-n>]], opts)
-  keymap.set("t", "jj", [[<C-\><C-n>]], { noremap = true })
-  keymap.set("t", "<C-h>", [[<Cmd>wincmd h<CR>]], opts)
-  keymap.set("t", "<C-j>", [[<Cmd>wincmd j<CR>]], opts)
-  keymap.set("t", "<C-k>", [[<Cmd>wincmd k<CR>]], opts)
-  keymap.set("t", "<C-l>", [[<Cmd>wincmd l<CR>]], opts)
+	local opts = { buffer = 0 }
+	keymap.set("t", "<esc>", [[<C-\><C-n>]], opts)
+	keymap.set("t", "jj", [[<C-\><C-n>]], { noremap = true })
+	keymap.set("t", "<C-h>", [[<Cmd>wincmd h<CR>]], opts)
+	keymap.set("t", "<C-j>", [[<Cmd>wincmd j<CR>]], opts)
+	keymap.set("t", "<C-k>", [[<Cmd>wincmd k<CR>]], opts)
+	keymap.set("t", "<C-l>", [[<Cmd>wincmd l<CR>]], opts)
 end
 
 -- if you only want these mappings for toggle term use term://*toggleterm#* instead
