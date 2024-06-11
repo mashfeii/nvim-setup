@@ -49,7 +49,7 @@ return {
 			lspconfig.cmake.setup({
 				capabilities = capabilities,
 			})
-			lspconfig.html.setup({
+			lspconfig.eslint.setup({
 				capabilities = capabilities,
 			})
 			lspconfig.emmet_language_server.setup({
