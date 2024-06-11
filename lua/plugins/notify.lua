@@ -6,5 +6,6 @@ return {
 		fps = 60,
 		stages = "fade",
 		render = "simple",
+		top_down = false,
 	},
 }
