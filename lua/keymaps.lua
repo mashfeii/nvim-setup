@@ -48,7 +48,7 @@ map("n", "<F9>", ":w<CR>:!clear<CR>:call CompileAndRun()<CR>", default_opts)
 map("n", "<leader>cg", ":CMakeGenerate<cr>", default_opts)
 map("n", "<leader>cb", ":CMakeBuild<cr>", default_opts)
 map("n", "<leader>cr", ":CMakeRun<cr>", default_opts)
-map("n", "<leader>term", ":ToggleTerm direction=vertical size=80<cr>", default_opts)
+map("n", "<leader>t", ":ToggleTerm <cr>", default_opts)
 
 function _G.set_terminal_keymaps()
 	local opts = { buffer = 0 }
