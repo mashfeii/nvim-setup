@@ -11,9 +11,9 @@ return {
 			cmake_build_options = {},
 			cmake_build_directory = function()
 				if osys.iswin32 then
-					return "out\\${variant:buildType}"
+					return "build\\"
 				end
-				return "./${variant:buildType}"
+				return "./build/"
 			end,
 			cmake_soft_link_compile_commands = true,
 			cmake_compile_commands_from_lsp = false,
@@ -34,7 +34,7 @@ return {
 				name = "toggleterm",
 				opts = {
 					direction = "horizontal", -- 'vertical' | 'horizontal' | 'tab' | 'float'
-					close_on_exit = true, -- whether close the terminal when exit
+					close_on_exit = false, -- whether close the terminal when exit
 					auto_scroll = true, -- whether auto scroll to the bottom
 					singleton = true, -- single instance, autocloses the opened one, if present
 				}, -- the options the executor will get, possible values depend on the executor type. See `default_opts` for possible values.
@@ -43,7 +43,7 @@ return {
 				name = "toggleterm", -- name of the runner
 				opts = {
 					direction = "horizontal", -- 'vertical' | 'horizontal' | 'tab' | 'float'
-					close_on_exit = true, -- whether close the terminal when exit
+					close_on_exit = false, -- whether close the terminal when exit
 					auto_scroll = true, -- whether auto scroll to the bottom
 					singleton = true, -- single instance, autocloses the opened one, if present
 				}, -- the options the runner will get, possible values depend on the runner type. See `default_opts` for possible values.

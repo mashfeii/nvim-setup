@@ -33,7 +33,7 @@ map("n", "<F1>", ":nohl<CR>", default_opts)
 map("n", "<F13>", ":g/^$/d<CR>", default_opts)
 -- ";"Q - save all and quit
 map("n", "<leader>Q", ":wqa<cr>", default_opts)
-map("n", "<leader>q", ":wq<cr>", default_opts)
+map("n", "<leader>q", "<C-w>q", default_opts)
 map("n", "<leader>w", ":w<cr>", default_opts)
 map("n", "<leader>bg", ":ToggleBackground<cr>", default_opts)
 -- <F4> Поиск слова под курсором
@@ -48,7 +48,8 @@ map("n", "<F9>", ":w<CR>:!clear<CR>:call CompileAndRun()<CR>", default_opts)
 map("n", "<leader>cg", ":CMakeGenerate<cr>", default_opts)
 map("n", "<leader>cb", ":CMakeBuild<cr>", default_opts)
 map("n", "<leader>cr", ":CMakeRun<cr>", default_opts)
-map("n", "<leader>t", ":ToggleTerm <cr>", default_opts)
+map("n", "<leader>cc", ":CMakeClean<cr>", default_opts)
+map("n", "<leader>T", ":ToggleTerm <cr>", default_opts)
 
 function _G.set_terminal_keymaps()
 	local opts = { buffer = 0 }

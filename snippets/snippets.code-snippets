@@ -5,57 +5,57 @@
     "body": "<ul class=\"${1:название-блока}__list\">\n\t<li class=\"${1:название-блока}__item\">\n\t\t<a href=\"\" class=\"${1:название-блока}__link\">$2</a>\n\t</li>\n</ul>"
   },
   "Внешниe": {
-    "scope": "css,scss",
+    "scope": "css,scss,jsx",
     "prefix": "mm",
     "body": ["margin: rem($1) rem($2) rem($3) rem($4);"]
   },
   "Внешний верхний": {
-    "scope": "css,scss",
+    "scope": "css,scss,jsx",
     "prefix": "mmt",
     "body": ["margin: rem($1) 0 0 0;"]
   },
   "Внешний нижний": {
-    "scope": "css,scss",
+    "scope": "css,scss,jsx",
     "prefix": "mmb",
     "body": ["margin: 0 0 rem($1) 0;"]
   },
   "Внешний правый": {
-    "scope": "css,scss",
+    "scope": "css,scss,jsx",
     "prefix": "mmr",
     "body": ["margin: 0 rem($1) 0 0;"]
   },
   "Внешний левый": {
-    "scope": "css,scss",
+    "scope": "css,scss,jsx",
     "prefix": "mml",
     "body": ["margin: 0 0 0 rem($1);"]
   },
   "Внутренние": {
-    "scope": "css,scss",
+    "scope": "css,scss,jsx",
     "prefix": "pp",
     "body": ["padding: rem($1) rem($2) rem($3) rem($4);"]
   },
   "Внутренний нижний": {
-    "scope": "css,scss",
+    "scope": "css,scss,jsx",
     "prefix": "ppb",
     "body": ["padding: 0 0 rem($1) 0;"]
   },
   "Внутренний верхний": {
-    "scope": "css,scss",
+    "scope": "css,scss,jsx",
     "prefix": "ppt",
     "body": ["padding: rem($1) 0 0 0;"]
   },
   "Внутренний левый": {
-    "scope": "css,scss",
+    "scope": "css,scss,jsx",
     "prefix": "ppl",
     "body": ["padding: 0 0 0 rem($1);"]
   },
   "Внутренний правый": {
-    "scope": "css,scss",
+    "scope": "css,scss,jsx",
     "prefix": "ppr",
     "body": ["padding: 0 rem($1) 0 0;"]
   },
   "Анимация transition": {
-    "scope": "css,scss",
+    "scope": "css,scss,jsx",
     "prefix": "ttr",
     "body": ["transition: $1 0.32$2s ease-in-out;$4"]
   },
@@ -65,17 +65,17 @@
     "body": ["<div class=\"$1__container container\">$2</div>"]
   },
   "Центральный марджин": {
-    "scope": "css,scss",
+    "scope": "css,scss,jsx",
     "prefix": "moa",
     "body": ["margin: 0 auto;"]
   },
   "Медиа-запрос на максимальную ширину": {
-    "scope": "css,scss",
+    "scope": "css,scss,jsx",
     "prefix": "mdma",
     "body": ["@media(max-width: $1) {$2}"]
   },
   "Медиа-запрос на минимульную ширину": {
-    "scope": "css,scss",
+    "scope": "css,scss,jsx",
     "prefix": "mdmi",
     "body": ["@media(min-width: $1) {$2}"]
   },
@@ -89,7 +89,7 @@
     "body": ["//=============================================================================="]
   },
   "Флекс выравнивание": {
-    "scope": "css,scss",
+    "scope": "css,scss,jsx",
     "prefix": "flc",
     "body": ["display: flex;", "align-items: center;", "justify-content: center;"]
   },
