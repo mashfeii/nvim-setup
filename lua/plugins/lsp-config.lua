@@ -23,6 +23,9 @@ return {
 			lspconfig.lua_ls.setup({
 				capabilities = capabilities,
 			})
+			lspconfig.tsserver.setup({
+				capabilities = capabilities,
+			})
 			lspconfig.ltex.setup({
 				capabilities = capabilities,
 				on_attach = function(client, bufnr)
@@ -47,9 +50,6 @@ return {
 				capabilities = capabilities,
 			})
 			lspconfig.html.setup({
-				capabilities = capabilities,
-			})
-			lspconfig.eslint.setup({
 				capabilities = capabilities,
 			})
 			lspconfig.emmet_language_server.setup({

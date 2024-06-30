@@ -17,7 +17,7 @@ return {
 					operators = {},
 				},
 			})
-			vim.cmd([[colorscheme catppuccin]])
+			-- vim.cmd([[colorscheme catppuccin]])
 		end,
 	},
 	{
@@ -61,6 +61,39 @@ return {
 				lualine_bold = true,
 			})
 			-- vim.cmd([[colorscheme tokyonight]])
+		end,
+	},
+	{
+		"sho-87/kanagawa-paper.nvim",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			require("kanagawa-paper").setup({
+				transparent = true,
+				gutter = true,
+				dimInactive = false, -- disabled when transparent
+				commentStyle = { italic = true },
+				functionStyle = { italic = true },
+				keywordStyle = { italic = false, bold = true },
+				statementStyle = { italic = false, bold = false },
+				background = { -- map the value of 'background' option to a theme
+					dark = "dragon", -- try "dragon" !
+					light = "lotus",
+				},
+			})
+		end,
+	},
+	{
+		"sainnhe/everforest",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			vim.g.everforest_enable_italic = true
+			vim.g.everforest_cursor = "green"
+			vim.g.everforest_transparent_background = '2'
+			vim.g.everforest_diagnostic_text_highlight = true
+			vim.g.everforest_diagnostic_line_highlight = true
+			vim.cmd([[colorscheme everforest]])
 		end,
 	},
 }
