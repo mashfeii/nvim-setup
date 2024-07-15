@@ -64,18 +64,15 @@ return {
 		end,
 	},
 	{
-		"sho-87/kanagawa-paper.nvim",
+		"rebelot/kanagawa.nvim",
 		lazy = false,
 		priority = 1000,
 		config = function()
-			require("kanagawa-paper").setup({
-				transparent = true,
-				gutter = true,
-				dimInactive = false, -- disabled when transparent
+			require("kanagawa").setup({
 				commentStyle = { italic = true },
-				functionStyle = { italic = true },
+				functionStyle = { italic = false, bold = true },
 				keywordStyle = { italic = false, bold = true },
-				statementStyle = { italic = false, bold = false },
+				statementStyle = { italic = false },
 				background = { -- map the value of 'background' option to a theme
 					dark = "dragon", -- try "dragon" !
 					light = "lotus",
@@ -88,9 +85,10 @@ return {
 		lazy = false,
 		priority = 1000,
 		config = function()
+			vim.g.everforest_background = "soft"
 			vim.g.everforest_enable_italic = true
 			vim.g.everforest_cursor = "green"
-			vim.g.everforest_transparent_background = '2'
+			vim.g.everforest_transparent_background = "2"
 			vim.g.everforest_diagnostic_text_highlight = true
 			vim.g.everforest_diagnostic_line_highlight = true
 			vim.cmd([[colorscheme everforest]])

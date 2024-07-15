@@ -23,6 +23,9 @@ return {
 			lspconfig.lua_ls.setup({
 				capabilities = capabilities,
 			})
+			lspconfig.cmake.setup({
+				capabilities = capabilities,
+			})
 			lspconfig.tsserver.setup({
 				capabilities = capabilities,
 			})
@@ -47,6 +50,9 @@ return {
 				capabilities = capabilities,
 			})
 			lspconfig.cmake.setup({
+				capabilities = capabilities,
+			})
+			lspconfig.pylsp.setup({
 				capabilities = capabilities,
 			})
 			lspconfig.eslint.setup({
