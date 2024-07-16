@@ -26,8 +26,7 @@ vim.opt.fillchars = {
 -----------------------------------------------------------
 -- Global
 -----------------------------------------------------------
-opt.colorcolumn = "100"
-opt.textwidth = 100
+opt.textwidth = 120
 opt.cursorline = true
 opt.spelllang = { "en_us", "ru" }
 opt.number = true
