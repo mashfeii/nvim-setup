@@ -7,13 +7,29 @@ return {
 				component_separators = "",
 				-- section_separators = { left = "", right = "" },
 				section_separators = { left = "", right = "" },
-				theme = "everforest",
+				theme = "kanagawa",
 			},
 			sections = {
 				lualine_a = { { "mode", separator = { left = "" }, right_padding = 2 } },
 				lualine_b = { "filename", "branch" },
 				lualine_c = { "diagnostics", "%=", "ctime", "cdate" },
-				lualine_x = { "fileformat", "filetype" },
+				lualine_x = {
+					function()
+						local ok, pomo = pcall(require, "pomo")
+						if not ok then
+							return ""
+						end
+
+						local timer = pomo.get_first_to_finish()
+						if timer == nil then
+							return ""
+						end
+
+						return "󰄉 " .. tostring(timer)
+					end,
+					"fileformat",
+					"filetype",
+				},
 				lualine_z = {
 					{ "location", separator = { right = "" }, left_padding = 2 },
 				},

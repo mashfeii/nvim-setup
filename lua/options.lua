@@ -96,12 +96,12 @@ local create_cmd = vim.api.nvim_create_user_command
 create_cmd("ToggleBackground", function()
 	if vim.o.background == "dark" then
 		vim.cmd("set bg=light")
-	-- cmd([[colorscheme tokyonight]])
-	-- require("lualine").setup({
-	-- 	options = {
-	-- 		theme = "tokyonight",
-	-- 	},
-	-- })
+		-- cmd([[colorscheme tokyonight]])
+		-- require("lualine").setup({
+		-- 	options = {
+		-- 		theme = "tokyonight",
+		-- 	},
+		-- })
 	else
 		vim.cmd("set bg=dark")
 		-- cmd([[colorscheme nord]])
